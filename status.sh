@@ -11,6 +11,6 @@ echo "updated: $(date '+%Y-%m-%d %H:%M')"
 {
 echo "failed logins: $(grep -c 'Failed password' /var/log/auth.log)"
 echo
-echo "top attackers:"
+echo "TOP:"
 grep 'Failed password' /var/log/auth.log | grep -oE 'from [0-9.]+' | cut -d' ' -f2 | sort | uniq -c | sort -rn | head -5
 } > attacks.txt

@@ -1,35 +1,34 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>bis174</title>
-<style>
-body { background: #111; color: #0f0; font-family: monospace; padding: 20px; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 </head>
+
 <body>
-<h1>dobm10@bis174</h1>
-<p>Hi, this is my server for 4SA313.</p>
+  <p>Hi, this is test.</p>
 
-<h2>status</h2>
-<pre id="status">loading...</pre>
+  <h2>status</h2>
+  <pre id="status">loading...</pre>
 
-<h2>bots trying to get in</h2>
-<pre id="attacks">loading...</pre>
+  <h2>bots trying to get in</h2>
+  <pre id="attacks">loading...</pre>
 
-<script>
-function load(file, id) {
-  fetch(file + "?" + Date.now())
-    .then(r => r.text())
-    .then(text => document.getElementById(id).textContent = text);
-}
-function update() {
-  load("status.txt", "status");
-  load("attacks.txt", "attacks");
-}
-update();
-setInterval(update, 60000);
-</script>
+  <script>
+    function load(file, id) {
+      fetch(file + "?" + Date.now())
+        .then(r => r.text())
+        .then(text => document.getElementById(id).textContent = text);
+    }
+    function update() {
+      load("status.txt", "status");
+      load("attacks.txt", "attacks");
+    }
+    update();
+    setInterval(update, 60000);
+  </script>
 </body>
+
 </html>
